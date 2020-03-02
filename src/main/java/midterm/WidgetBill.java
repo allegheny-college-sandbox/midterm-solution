@@ -27,13 +27,9 @@ public class WidgetBill {
     System.out.println(whatchamacallit);
     System.out.println(gadget);
     System.out.println();
-
     
     double totalPrice = thingamajig.getPrice() + zonk.getPrice() + maguffin.getPrice()
                         + whatchamacallit.getPrice() + gadget.getPrice();
-    double totalWeight = thingamajig.getWeight() + zonk.getWeight() + maguffin.getWeight()
-                         + whatchamacallit.getWeight() + gadget.getWeight();
-    double shippingCost = 0.33 * totalWeight;
    
     Scanner input = new Scanner(System.in);
     System.out.print("Enter member discount rate: ");
@@ -41,8 +37,13 @@ public class WidgetBill {
     
     System.out.println();
     System.out.println("Price before discount: " + totalPrice);
-    totalPrice -= totalPrice * discountRate/100;
+    totalPrice -= totalPrice * discountRate / 100;
     System.out.println("Member discount applied: " + discountRate + "%");
+    
+    double totalWeight = thingamajig.getWeight() + zonk.getWeight() + maguffin.getWeight()
+                         + whatchamacallit.getWeight() + gadget.getWeight();
+    double shippingCost = .33 * totalWeight;
+    
     System.out.println("Final price: " + totalPrice + ", Total weight: " + totalWeight);
     System.out.println("Cost to ship: " + shippingCost);
     System.out.print("Final total: " + (totalPrice + shippingCost));
