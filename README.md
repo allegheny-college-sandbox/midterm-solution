@@ -1,15 +1,14 @@
-# CMPSC 100-02 Practical Session 6
+# CMPSC 100-02 Mid-term exam
 
-* Assigned: 28 February 2020
-* Due: 2 March 2020 by 11:00 AM
-* Point value: 10
+* Assigned: 2 March 2020
+* Due: 12 March 2020 by 1:30 PM
+* Point value: 100
 
-In this practical session we explore `classes`, `objects`, `methods`, `return types`, and a fictional story about a pizza party.
+This exam explores various concepts up to our work with `reference types`. This exam is cumulative and potentially covers all knowledge gained up to this point in the course.
 
 * [Slack](https://cmpsc-100-02-sp-2020.slack.com)
 * [GitHub](https://www.github.com)
 * git
-* Markdown
 * [Atom](https://atom.io)
 * [Docker](https://www.docker.com/products/docker-desktop)
 * GatorGrader
@@ -19,25 +18,13 @@ In this practical session we explore `classes`, `objects`, `methods`, `return ty
 
 * [Evaluation](#evaluation)
 * [Accepting the assignment](#accepting-the-assignment)
-* [Pizza Party!](#pizza-party)
+* [G. Wiz buys some widgets](#g-wiz-buys-some-widgets)
 * [GatorGrader](#gatorgrader)
-
-## General guidelines for practical sessions
-
-* **Experiment!** We design practical sessions to create a space for you to _try things_. Given the expertise of our classroom TLs and my interest in fixing stuff, I am sure that even if something breaks, we can fix it.
-* **Complete _something_.** Grading for practical assignments hinges on _completion_. As long as you provide a good faith effort to finish a task, your grade should reflect your effort.
-* **Practice skills.** If you work in the discipline of computer science, many of the skills you revisit or establish here are industry standard practice. Learning and practicing them often helps prepare you for either other classes or professional work.
-* **Try to finish during the class session** While I provide extra time to complete the work, these assignments can be completed in 50 minutes. This will help you develop your awareness and management of time.
-* **Help one another!** We're a community of users here, not competitors. If you grasp something quickly, but a neighbor does not, offer to help them after they've tried for a bit. Conversely, _ask for help_ from either me, our TLs, or your neighbor.
-
-## Evaluation
-
-Practical assignments are evaluated based on an honest attempt at completion. As long as I can see a clear effort to complete the work, you will recieve credit for this assignment.
 
 ## Accepting the assignment
 
-- [ ] Log into the `#practicals` channel in our class [Slack](https://cmpsc-100-02-sp-2020.slack.com)
-- [ ] Click the link provided for the practical assignment and accept it in GitHub classroom
+- [ ] Log into the `#general` channel in our class [Slack](https://cmpsc-100-02-sp-2020.slack.com)
+- [ ] Click the link provided for the exam and accept it in GitHub classroom
 - [ ] Once the assignment finishes building, click the link to go to your personal repository assignment
 
 ## "Cloning" a repository
@@ -56,26 +43,57 @@ Practical assignments are evaluated based on an honest attempt at completion. As
 - [ ] Change directories (`cd`) to your `Practicals` folder
 - [ ] Once in the `Practicals` folder, "clone" the repository using the link copied above
    * If I (the instructor) were to clone my own repository, I'd enter (your link will look different):
+   
 ```
-git clone git@github.com:allegheny-college-cmpsc-100-spring-2020/cmpsc-100-spring-2020- practical-06-dluman
+git clone git@github.com:allegheny-college-cmpsc-100-spring-2020/cmpsc-100-spring-2020-midterm-code-completion
 ```
 
-## Pizza Party!
+## G. Wiz buys some widgets
 
-Imagine this: we're at a pizza party for which _three_ large ultra-mega-supreme pizza feeds everyone. It's pretty great. Obviously.
+![Gee, wiz those are some widgets](https://github.com/allegheny-college-sandbox/midterm-solution/blob/media/media/Midterm%20-%20Widget%20Box.png)
 
-Next-door, there's a less well-planned pizza party that has just run out of pizza. During our wonderful, optimally-planned celebration, our neighboring party knocks on the door and asks if they can "borrow" some of our pizza. By this time, we've all had our fill and could part with some of our loot. We've only eaten `1/4` of the last pizza, ahd have some to spare.
+What's a widget? Who knows?! G. Wiz does, and they've put their Wizard Union discount to work, buying 5 boxes of them, 1 box each of:
 
-We decide to share `2/3` of our last remaining pizza with them. 
+* `Thingamajigs`
+* `Zonks`
+* `Maguffins`
+* `Whatchamacallits`
+* `Gadgets`
 
-A few late-comers arrive at _our_ party -- a number for which `1/4` of a large pizza is more than enough. 
+The ordering is complete, but the widget factory is transitioning to a digital order system, and needs some help completing a system to process such a large order. Here are some of the challenges that such a system needs to face:
 
-Do we have enough pizza left?
+* The widget factory works with several different trade unions and gives each a different discount.
+    * They need a way to enter this information _for each order_.
+    * This discount applies _only to the total price_.
+    * Entry of this discount should be acceptable as whole numbers followed by decimal places (e.g. `18.48`)
+* Widgets are heavy.
+    * Shipping widgets costs `.33` per `lb`.
+    * The shipping cost is added to the total price after the discount.
+    
+### The Java
+
+The following table represents the `Widget` class and services available to `Widget` objects:
+
+![What the heck are widgets?!](https://github.com/allegheny-college-sandbox/midterm-solution/blob/media/media/Midterm%20-%20Widget%20Class.png)
 
 ### The output
 
+The following is an _example_ created using a test case scenario. Your code should be able to accept a wide variety of values for the `member discount rate`, and your test case numbers may look slightly different. However, your program should pass my test case below.
+
 ```
-We have #/## (#.##) of a pizza remaining.
+Thingamajig     $13.37	42.12 lbs.
+The Zonk	      $19.79	34.23 lbs.
+Maguffin	      $18.94	2.21 lbs.
+Whatchamacallit	$13.37	112.32 lbs.
+A Gadget	      $119.33	41.12 lbs.
+
+Enter member discount rate: ##
+
+Price before discount: 184.8
+Member discount applied: ##.##%
+Final price: 150.64896000000002, Total weight: 232.0
+Cost to ship: 76.56
+Final total: 227.20896000000002
 ```
 
 ## Evaluation
@@ -85,16 +103,16 @@ For the purposes of this assignment, complete could should:
 - [ ] Pass `gradle build` and `gradle -q --console plain run`
     * This ensures both _legible_ and _runnable_ code
 
-### `PizzaParty.java`
+### `WidgetBill.java`
 
-- [ ] Creates a sufficient number of `Fraction` objects to represent our word problem
-- [ ] Uses the `getNumer` and `getDenom` methods to multiply the correct fractions
-- [ ] Uses the `setNumer` and `setDenom` methods to set the appropriate fraction equal to the product of our multiplcation above
-- [ ] Prints the output of a `getDecimalValue` method of `Fraction` in output similar to the above example
+- [ ] Contains no `TODO` markers
+- [ ] Contains no `{Your Name Here}` markers
 
-### `Fraction.java`
+### `Widget.java`
 
-- [ ] Implements a `getDecimalValue` method which returns the quotient of a `Fraction` object instance's `numer` and `denom`
+- [ ] Exists, **_untouched_**
+
+You do not need to (and _should not_) make changes to this file.
 
 ## GatorGrader
 
@@ -128,7 +146,7 @@ You will use this command to grade your work before you turn it in, enabling you
 #### Running GatorGrader directly on `container` start
 
 - [ ] `cd` to your `CMPSC100` folder
-- [ ] Locate the `cmpsc-100-spring-2020- practical-06` folder and `cd` to it.
+- [ ] Locate the `cmpsc-100-spring-2020-midterm-code-completion` folder and `cd` to it.
     * Remember that if you run `ls -la`, you should see a `.git` folder if you're in the main repository folder.
 - [ ] To make sure you're in the right repository, type `pwd` and press `Enter`
     * If you recieve the expected path, you're in the right place!
@@ -152,7 +170,7 @@ docker run -it --mount type=bind,source="$(pwd)",target="/project" --hostname Ga
 The GitHub platform is a place to store your work. So, it makes some sense that should be able to _clone_ (download) from it, and push back (upload) to it. Here, we'll learn this second part.
 
 - [ ] `cd` to your `CMPSC100` folder
-- [ ] Locate the `cmpsc-100-spring-2020- practical-06` folder and `cd` to it
+- [ ] Locate the `cmpsc-100-spring-2020-midterm-code-completion` folder and `cd` to it
 
 Once in this folder, we need to tell git that there have been changes.
 
