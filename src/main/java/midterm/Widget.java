@@ -36,6 +36,15 @@ public class Widget {
     return this.weight;
   }
   
+  /** Sets the price of a widget after discount.
+   *
+   * @param discount The percentage to discount.
+   */
+  public void setDiscountPrice(double discount) {
+    discount /= 100;
+    this.price -= this.price * discount;
+  }
+  
   /** Creates String representation of widget.
    *
    */

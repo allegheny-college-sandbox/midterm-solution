@@ -41,8 +41,19 @@ public class WidgetBill {
     // Print the total price and discount rate
     System.out.println();
     System.out.println("Price before discount: " + totalPrice);
-    totalPrice -= totalPrice * discountRate / 100;
-    System.out.println("Member discount applied: " + discountRate + "%");
+    /*
+     * If not implementing extra credit: 
+     * totalPrice -= totalPrice * discountRate / 100;
+     */
+    double discount = 18.48;
+    thingamajig.setDiscountPrice(discount);
+    zonk.setDiscountPrice(discount);
+    maguffin.setDiscountPrice(discount);
+    whatchamacallit.setDiscountPrice(discount);
+    gadget.setDiscountPrice(discount);
+    totalPrice = thingamajig.getPrice() + zonk.getPrice() + maguffin.getPrice()
+                 + whatchamacallit.getPrice() + gadget.getPrice();
+    System.out.println("Member discount applied: " + discount + "%");
     
     // Get total weight and apply shipping
     double totalWeight = thingamajig.getWeight() + zonk.getWeight() + maguffin.getWeight()
