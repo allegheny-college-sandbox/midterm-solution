@@ -9,7 +9,7 @@ src/main/java/midterm:
         ConfirmFileExists
         CountSingleLineComments --language Java --count 4
         MatchFileFragment --fragment "{Your Name Here}" --count 0 --exact
-        MatchFileFragment --fragment "TODO" --count 0 --exactt
+        MatchFileFragment --fragment "TODO" --count 0 --exact
 
 src/main/java/midterm:
     Widget.java:
