@@ -16,9 +16,9 @@ src/main/java/midterm:
         ConfirmFileExists
         
 ExecuteCommand --command "gradle build"
-ExecuteCommand --command "gradle interactiveGradeRun"
-CountCommandOutput --command "gradle interactiveGradeRun" --count 11 --exact
-MatchCommandFragment --command "gradle interactiveGradeRun" --fragment "150.6" --count 1 --exact
-MatchCommandFragment --command "gradle interactiveGradeRun" --fragment "184.8" --count 1 --exact
-MatchCommandFragment --command "gradle interactiveGradeRun" --fragment "76.5" --count 1 --exact
-MatchCommandFragment --command "gradle interactiveGradeRun" --fragment "227.2" --count 1 --exact
+ExecuteCommand --command "gradle -q --console plain interactiveGradeRun"
+CountCommandOutput --command "gradle -q --console plain interactiveGradeRun" --count 11 --exact
+MatchCommandFragment --command "gradle -q --console plain interactiveGradeRun" --fragment "150.6" --count 1 --exact
+MatchCommandFragment --command "gradle -q --console plain interactiveGradeRun" --fragment "184.8" --count 1 --exact
+MatchCommandFragment --command "gradle -q --console plain interactiveGradeRun" --fragment "76.5" --count 1 --exact
+MatchCommandFragment --command "gradle -q --console plain interactiveGradeRun" --fragment "227.2" --count 1 --exact
