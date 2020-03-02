@@ -4,8 +4,8 @@ break: true
 indent: 4
 ---
 
-src/main/java/practicalsix:
-    PizzaParty.java:
+src/main/java/midterm:
+    WidgetBill.java:
         ConfirmFileExists
         CountSingleLineComments --language Java --count 4
         MatchFileFragment --fragment "{Your Name Here}" --count 0 --exact
