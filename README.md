@@ -81,11 +81,11 @@ The following table represents the `Widget` class and services available to `Wid
 The following is an _example_ created using a test case scenario. Your code should be able to accept a wide variety of values for the `member discount rate`, and your test case numbers may look slightly different. However, your program should pass my test case below.
 
 ```
-Thingamajig     $13.37	42.12 lbs.
-The Zonk	      $19.79	34.23 lbs.
-Maguffin	      $18.94	2.21 lbs.
-Whatchamacallit	$13.37	112.32 lbs.
-A Gadget	      $119.33	41.12 lbs.
+Thingamajig     $13.37  42.12 lbs.
+The Zonk        $19.79  34.23 lbs.
+Maguffin        $18.94  2.21 lbs.
+Whatchamacallit $13.37  112.32 lbs.
+A Gadget        $119.33 41.12 lbs.
 
 Enter member discount rate: ##
 
@@ -112,7 +112,7 @@ For the purposes of this assignment, complete could should:
 
 - [ ] Exists, **_untouched_**
 
-You do not need to (and _should not_) make changes to this file.
+You do not need to (and _should not_) make changes to this file. The table above provides its definitions and "powers."
 
 ## GatorGrader
 
