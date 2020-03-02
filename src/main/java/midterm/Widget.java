@@ -7,7 +7,7 @@ package midterm;
 public class Widget {
   
   private final String name;
-  private final double price;
+  private double price;
   private final double weight;
   
   /** Constructor.
